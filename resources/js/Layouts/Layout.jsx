@@ -118,6 +118,64 @@ export default function Layout({ children }) {
             <main className="main-content">
                 {children}
             </main>
+
+            <footer className="app-footer">
+                <div className="footer-container">
+                    <div className="footer-grid">
+                        <div>
+                            <div className="footer-brand-title">
+                                <span style={{ color: 'var(--cargo-orange)' }}>●</span> EXPORT CENTER SURABAYA
+                            </div>
+                            <p className="footer-brand-desc">
+                                Layanan pendampingan dan konsultasi terpadu untuk memfasilitasi eksportir dan calon eksportir Indonesia menembus pasar global secara berkelanjutan.
+                            </p>
+                        </div>
+                        <div>
+                            <h4 className="footer-heading">Navigasi Cepat</h4>
+                            <ul className="footer-links">
+                                <li><Link href="/">Beranda</Link></li>
+                                <li><Link href="/about">Tentang Kami</Link></li>
+                                <li><Link href="/services">Layanan Ekspor</Link></li>
+                                <li><Link href="/partners">Mitra Kerja</Link></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="footer-heading">Layanan</h4>
+                            <ul className="footer-links">
+                                <li><Link href="/services/konsultasi">Konsultasi Ekspor</Link></li>
+                                <li><Link href="/services/business-matching">Business Matching</Link></li>
+                                <li><Link href="/services/inquiries">Penyebaran Inquiry</Link></li>
+                                <li><Link href="/services/inaexport">Pendampingan InaExport</Link></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 className="footer-heading">Kontak & Lokasi</h4>
+                            <div className="footer-contact-item">
+                                <svg className="footer-contact-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <span>Surabaya, Jawa Timur, Indonesia</span>
+                            </div>
+                            <div className="footer-contact-item">
+                                <svg className="footer-contact-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                                <span>info@exportcentersurabaya.id</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="footer-bottom">
+                        <div>&copy; {new Date().getFullYear()} Export Center Surabaya. Hak Cipta Dilindungi.</div>
+                        <div style={{ display: 'flex', gap: '1.5rem' }}>
+                            <a href="#">Kebijakan Privasi</a>
+                            <a href="#">Syarat & Ketentuan</a>
+                            <a href="#">Peta Situs</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
     );
 }
