@@ -2656,11 +2656,7 @@ body {
     display: flex;
     align-items: center;
     width: max-content;
-    animation: partnerScroll 22s linear infinite;
-}
-
-.partner-marquee-wrapper:hover .partner-marquee-track {
-    animation-play-state: paused;
+    animation: partnerScroll 20s linear infinite;
 }
 
 .partner-marquee-item {
