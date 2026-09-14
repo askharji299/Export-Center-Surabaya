@@ -16,7 +16,11 @@ export default function PartnerSliderSection() {
     return (
         <section className="partner-slider-section">
             <div className="partner-slider-container">
+                <span className="partner-slider-subtitle">KOLABORASI & SINERGI</span>
                 <h2 className="partner-slider-title">Mitra Kami</h2>
+                <p className="partner-slider-desc">
+                    Bekerja sama erat dengan kementerian, pemprov, perwakilan luar negeri, dan lembaga pendukung ekspor nasional.
+                </p>
 
                 {/* Continuous Infinite Smooth Marquee */}
                 <div className="partner-marquee-wrapper">
