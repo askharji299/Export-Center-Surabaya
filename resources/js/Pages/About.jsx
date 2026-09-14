@@ -37,7 +37,7 @@ function About() {
                     <div className="about-intro-features">
                         <div className="about-feature-card">
                             <div className="about-feature-icon">
-                                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="#0b4e6b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <svg viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="var(--ocean-teal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M4 8c0-2.2 1.8-4 4-4h16c2.2 0 4 1.8 4 4v10c0 2.2-1.8 4-4 4H18l-4 4-4-4H8c-2.2 0-4-1.8-4-4V8z"/>
                                     <path d="M10 12h12M10 17h8"/>
                                 </svg>
