@@ -10,34 +10,26 @@ const partners = [
 ];
 
 export default function PartnerSliderSection() {
+    // Current page: 0 (logos 0, 1, 2) or 1 (logos 3, 4, 5)
+    // Also support smooth sliding
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
     const timerRef = useRef(null);
 
-    // Auto-advance slide every 3 seconds if not hovered
+    // Auto-advance slide smoothly every 3.5 seconds
     useEffect(() => {
         if (!isHovered) {
             timerRef.current = setInterval(() => {
                 setCurrentIndex((prev) => (prev + 1) % partners.length);
-            }, 3000);
+            }, 3500);
         }
         return () => {
             if (timerRef.current) clearInterval(timerRef.current);
         };
     }, [isHovered]);
 
-    // Compute visible 3 logos centered around currentIndex (or sliding window)
-    // To show 3 logos at once on desktop, exactly like the reference image
-    const getVisiblePartners = () => {
-        const items = [];
-        for (let i = 0; i < 3; i++) {
-            const idx = (currentIndex + i) % partners.length;
-            items.push(partners[idx]);
-        }
-        return items;
-    };
-
-    const visibleItems = getVisiblePartners();
+    // To create a true continuous sliding carousel, duplicate array so it slides smoothly
+    const extendedPartners = [...partners, ...partners, ...partners];
 
     return (
         <section 
@@ -48,17 +40,26 @@ export default function PartnerSliderSection() {
             <div className="partner-slider-container">
                 <h2 className="partner-slider-title">Mitra Kami</h2>
 
-                <div className="partner-slider-track">
-                    {visibleItems.map((partner, index) => (
-                        <div key={`${partner.id}-${index}`} className="partner-item-card">
-                            <img 
-                                src={partner.logo} 
-                                alt={partner.name} 
-                                className="partner-logo-img" 
-                                loading="lazy"
-                            />
-                        </div>
-                    ))}
+                {/* Carousel Window / Viewport */}
+                <div className="partner-carousel-viewport">
+                    <div 
+                        className="partner-carousel-track"
+                        style={{
+                            transform: `translateX(calc(-${currentIndex} * (100% / 3)))`,
+                            transition: 'transform 0.7s cubic-bezier(0.25, 1, 0.5, 1)'
+                        }}
+                    >
+                        {extendedPartners.map((partner, index) => (
+                            <div key={`${partner.id}-${index}`} className="partner-item-card">
+                                <img 
+                                    src={partner.logo} 
+                                    alt={partner.name} 
+                                    className="partner-logo-img" 
+                                    loading="lazy"
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Dot Pagination Indicators */}
@@ -67,8 +68,8 @@ export default function PartnerSliderSection() {
                         <button
                             key={idx}
                             onClick={() => setCurrentIndex(idx)}
-                            className={`partner-dot ${currentIndex === idx ? 'active' : ''}`}
-                            aria-label={`Pindah ke slide ${idx + 1}`}
+                            className={`partner-dot ${currentIndex % partners.length === idx ? 'active' : ''}`}
+                            aria-label={`Pindah ke mitra ${idx + 1}`}
                         />
                     ))}
                 </div>
