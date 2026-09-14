@@ -1,6 +1,7 @@
 import { Head } from '@inertiajs/react';
 import Layout from '../Layouts/Layout';
 import ServicesSection from '../Components/ServicesSection';
+import PartnerSliderSection from '../Components/PartnerSliderSection';
 
 function Welcome() {
     return (
@@ -17,6 +18,7 @@ function Welcome() {
                 </div>
             </div>
             <ServicesSection />
+            <PartnerSliderSection />
         </>
     );
 }
