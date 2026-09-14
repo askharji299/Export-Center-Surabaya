@@ -2619,58 +2619,51 @@ body {
    ============================================ */
 .partner-slider-section {
     width: 100%;
-    background-color: #f8fafc;
-    padding: 7rem 0 8rem;
+    background-color: var(--primary, #1a6b4a);
+    padding: 3rem 0;
     position: relative;
     overflow: hidden;
-    border-top: 1px solid #edf2f7;
 }
 
-.partner-slider-container {
-    max-width: 1200px;
-    margin: 0 auto 3.5rem;
+.partner-section-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    padding: 0 1.5rem;
+    padding: 0 2rem;
+    gap: 3rem;
 }
 
-.partner-slider-subtitle {
-    font-size: 0.88rem;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-    color: #1a6b4a;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-    display: inline-block;
+.partner-left-title-col {
+    flex: 0 0 auto;
+    z-index: 2;
+    padding-right: 1.5rem;
+    border-right: 2px solid rgba(255, 255, 255, 0.25);
 }
 
 .partner-slider-title {
-    font-size: 2.75rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    color: #0f172a;
-    margin-bottom: 1.25rem;
-    letter-spacing: -0.025em;
-    line-height: 1.2;
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+    letter-spacing: -0.01em;
 }
 
-.partner-slider-desc {
-    max-width: 680px;
-    font-size: 1.1rem;
-    color: #64748b;
-    line-height: 1.6;
-    margin: 0 auto;
+.partner-right-marquee-col {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .partner-marquee-wrapper {
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 2.5rem 0;
-    /* Soft gradient fade on left and right edges */
-    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    padding: 0.5rem 0;
+    /* Gradient fade on edges over green background */
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
 }
 
 .partner-marquee-track {
@@ -2685,8 +2678,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 4.5rem;
-    height: 180px;
+    padding: 0 3rem;
+    height: 110px;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -2695,8 +2688,8 @@ body {
 }
 
 .partner-logo-img {
-    max-width: 280px;
-    max-height: 125px;
+    max-width: 220px;
+    max-height: 95px;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -2704,6 +2697,8 @@ body {
     border: none;
     outline: none;
     box-shadow: none;
+    /* Optional slight brightness pop on green background */
+    filter: brightness(0) invert(1) drop-shadow(0 2px 6px rgba(0,0,0,0.15)) !important;
 }
 
 @keyframes partnerScroll {
@@ -2716,41 +2711,23 @@ body {
 }
 
 @media (max-width: 992px) {
-    .partner-slider-section {
-        padding: 5rem 0 6rem;
+    .partner-section-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    .partner-left-title-col {
+        border-right: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+        padding-right: 0;
+        padding-bottom: 1rem;
     }
     .partner-slider-title {
-        font-size: 2.25rem;
-    }
-    .partner-marquee-item {
-        padding: 0 3rem;
-        height: 140px;
-    }
-    .partner-logo-img {
-        max-width: 230px;
-        max-height: 110px;
+        font-size: 1.8rem;
     }
 }
 
-@media (max-width: 640px) {
-    .partner-slider-section {
-        padding: 4rem 0 5rem;
-    }
-    .partner-slider-title {
-        font-size: 1.85rem;
-    }
-    .partner-slider-desc {
-        font-size: 0.95rem;
-    }
-    .partner-marquee-item {
-        padding: 0 2rem;
-        height: 120px;
-    }
-    .partner-logo-img {
-        max-width: 190px;
-        max-height: 90px;
-    }
-}
 
 
 

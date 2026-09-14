@@ -15,22 +15,24 @@ export default function PartnerSliderSection() {
 
     return (
         <section className="partner-slider-section">
-            <div className="partner-slider-container">
-                <h2 className="partner-slider-title">Mitra Kami</h2>
-
-                {/* Continuous Infinite Smooth Marquee */}
-                <div className="partner-marquee-wrapper">
-                    <div className="partner-marquee-track">
-                        {marqueeList.map((partner, index) => (
-                            <div key={`${partner.id}-${index}`} className="partner-marquee-item">
-                                <img 
-                                    src={partner.logo} 
-                                    alt={partner.name} 
-                                    className="partner-logo-img" 
-                                    loading="lazy"
-                                />
-                            </div>
-                        ))}
+            <div className="partner-section-wrapper">
+                <div className="partner-left-title-col">
+                    <h2 className="partner-slider-title">Mitra Kami</h2>
+                </div>
+                <div className="partner-right-marquee-col">
+                    <div className="partner-marquee-wrapper">
+                        <div className="partner-marquee-track">
+                            {marqueeList.map((partner, index) => (
+                                <div key={`${partner.id}-${index}`} className="partner-marquee-item">
+                                    <img 
+                                        src={partner.logo} 
+                                        alt={partner.name} 
+                                        className="partner-logo-img" 
+                                        loading="lazy"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
