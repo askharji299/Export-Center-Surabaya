@@ -2695,13 +2695,15 @@ body {
 }
 
 .partner-logo-img {
-    max-width: 300px;
-    max-height: 145px;
+    max-width: 280px;
+    max-height: 125px;
     width: auto;
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.05));
-    transition: filter 0.3s ease;
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
 }
 
 @keyframes partnerScroll {
