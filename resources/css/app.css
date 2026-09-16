@@ -3273,10 +3273,10 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-/* Left Column: Sticky Title (menggantung saat scroll) */
+/* Left Column: Pure Sticky Title (menggantung saat scroll) */
 .about-process-left {
     position: sticky;
-    top: 110px;
+    top: 120px;
     align-self: flex-start;
     padding-right: 1.5rem;
     z-index: 10;
@@ -3287,17 +3287,6 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
 }
 
-.about-process-kicker-label {
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--primary, #1a6b4a);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    display: inline-block;
-}
-
 .about-process-title {
     font-family: var(--font-heading);
     font-size: clamp(2.4rem, 3.4vw, 3.6rem);
@@ -3305,44 +3294,10 @@ h1, h2, h3, h4, h5, h6 {
     color: #0f172a;
     line-height: 1.18;
     letter-spacing: -0.03em;
-    margin: 0 0 1.5rem 0;
+    margin: 0;
 }
 
-.about-process-subtitle-lead {
-    font-family: var(--font-body);
-    font-size: 1.05rem;
-    line-height: 1.8;
-    color: #475569;
-    margin: 0 0 2.25rem 0;
-}
-
-.about-process-left-cta {
-    display: flex;
-}
-
-.about-process-consult-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    padding: 0.95rem 1.85rem;
-    background-color: var(--primary, #1a6b4a);
-    color: #ffffff;
-    font-family: var(--font-body);
-    font-weight: 700;
-    font-size: 0.95rem;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    box-shadow: 0 4px 14px rgba(26, 107, 74, 0.2);
-}
-
-.about-process-consult-btn:hover {
-    background-color: var(--primary-dark, #145539);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(26, 107, 74, 0.3);
-}
-
-/* Right Column: Tall Architectural Cards with Rich Content */
+/* Right Column: Clean Editorial List with Long Vertical Rhythm */
 .about-process-right {
     display: flex;
     flex-direction: column;
@@ -3353,50 +3308,30 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 2.25rem;
 }
 
 .about-process-card-row {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 24px;
-    padding: clamp(2.25rem, 3.2vw, 3.25rem);
-    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
-    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: clamp(3.5rem, 6vh, 5.5rem) 0;
     position: relative;
-    overflow: hidden;
 }
 
-.about-process-card-row::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 5px;
-    height: 100%;
-    background-color: transparent;
-    transition: background-color 0.3s ease;
+.about-process-card-row:first-child {
+    padding-top: 0;
 }
 
-.about-process-card-row:hover {
-    border-color: rgba(26, 107, 74, 0.35);
-    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
-    transform: translateY(-4px);
-}
-
-.about-process-card-row:hover::before {
-    background-color: var(--primary, #1a6b4a);
+.about-process-card-row:last-child {
+    padding-bottom: 0;
 }
 
 .about-process-card-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
 }
 
 .about-process-title-group {
@@ -3408,7 +3343,7 @@ h1, h2, h3, h4, h5, h6 {
 .about-process-icon-badge {
     width: 52px;
     height: 52px;
-    border-radius: 14px;
+    border-radius: 50%;
     background-color: rgba(26, 107, 74, 0.08);
     color: var(--primary, #1a6b4a);
     display: flex;
@@ -3421,23 +3356,12 @@ h1, h2, h3, h4, h5, h6 {
 .about-process-card-row:hover .about-process-icon-badge {
     background-color: var(--primary, #1a6b4a);
     color: #ffffff;
-    transform: scale(1.05);
-}
-
-.about-process-item-kicker {
-    display: block;
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-bottom: 0.25rem;
+    transform: scale(1.08);
 }
 
 .about-process-item-title {
     font-family: var(--font-heading);
-    font-size: clamp(1.4rem, 1.8vw, 1.75rem);
+    font-size: clamp(1.45rem, 2vw, 1.85rem);
     font-weight: 700;
     color: #0f172a;
     margin: 0;
@@ -3447,9 +3371,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-process-big-num {
     font-family: var(--font-heading);
-    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    font-size: clamp(3.2rem, 4.5vw, 4.8rem);
     font-weight: 800;
-    color: #e2e8f0;
+    color: #cbd5e1;
     line-height: 1;
     letter-spacing: -0.04em;
     user-select: none;
@@ -3462,119 +3386,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-process-item-desc {
     font-family: var(--font-body);
-    font-size: 1.05rem;
-    line-height: 1.85;
+    font-size: clamp(1.05rem, 1.2vw, 1.15rem);
+    line-height: 2.1;
     color: #475569;
-    margin: 0 0 1.75rem 0;
+    margin: 0;
     max-width: 950px;
 }
 
-/* Service Tags List */
-.about-process-tags-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-bottom: 1.75rem;
-}
-
-.about-process-tag-pill {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.35rem 0.85rem;
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 9999px;
-    font-family: var(--font-body);
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: #475569;
-    transition: all 0.2s ease;
-}
-
-.about-process-card-row:hover .about-process-tag-pill {
-    background-color: rgba(26, 107, 74, 0.05);
-    border-color: rgba(26, 107, 74, 0.2);
-    color: var(--primary, #1a6b4a);
-}
-
-/* Highlight Cards Grid */
-.about-process-highlight-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-bottom: 1.75rem;
-}
-
-.about-process-hl-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1.15rem 1.25rem;
-    background-color: #f8fafc;
-    border: 1px solid #edf2f7;
-    border-radius: 14px;
-    transition: all 0.25s ease;
-}
-
-.about-process-card-row:hover .about-process-hl-card {
-    background-color: #ffffff;
-    border-color: #e2e8f0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-}
-
-.about-process-hl-icon {
-    color: var(--primary, #1a6b4a);
-    margin-top: 2px;
-    flex-shrink: 0;
-}
-
-.about-process-hl-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-}
-
-.about-process-hl-label {
-    font-family: var(--font-body);
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.about-process-hl-value {
-    font-family: var(--font-body);
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: #1e293b;
-    line-height: 1.45;
-}
-
-/* Action Row */
-.about-process-action-row {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-top: 1.25rem;
-    border-top: 1px dashed #e2e8f0;
-}
-
-.about-process-action-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: var(--font-body);
-    font-size: 0.92rem;
-    font-weight: 700;
-    color: var(--primary, #1a6b4a);
-    text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.about-process-action-link:hover {
-    color: var(--primary-dark, #145539);
-    gap: 0.75rem;
+.about-process-row-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #e2e8f0;
+    margin-top: clamp(3.5rem, 6vh, 5.5rem);
 }
 
 @media (max-width: 1024px) {
@@ -3587,8 +3410,11 @@ h1, h2, h3, h4, h5, h6 {
         top: auto;
         padding-right: 0;
     }
-    .about-process-highlight-grid {
-        grid-template-columns: 1fr;
+    .about-process-card-row {
+        padding: 3rem 0;
+    }
+    .about-process-row-divider {
+        margin-top: 3rem;
     }
 }
 
