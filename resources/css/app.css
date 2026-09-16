@@ -2202,30 +2202,12 @@ h1, h2, h3, h4, h5, h6 {
 /* Top Section Header */
 .cerebrium-top-header {
     max-width: 1560px;
-    margin: 0 auto clamp(3.5rem, 5vw, 5.5rem) auto;
-    display: grid;
-    grid-template-columns: minmax(280px, 32%) 1fr;
-    gap: clamp(2.5rem, 4vw, 5rem);
-    align-items: flex-end;
-    padding-bottom: 2.5rem;
+    margin: 0 auto clamp(3.5rem, 5vw, 5rem) auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 2rem;
     border-bottom: 1px solid #e2e8f0;
-}
-
-.cerebrium-header-left {
-    display: flex;
-    flex-direction: column;
-}
-
-.cerebrium-header-sub {
-    font-family: var(--font-body);
-    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
-    line-height: 1.65;
-    color: #64748b;
-    font-weight: 500;
-}
-
-.cerebrium-header-right {
-    display: flex;
 }
 
 .cerebrium-header-title {

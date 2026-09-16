@@ -109,19 +109,12 @@ export default function HomeHighlightSection() {
 
     return (
         <section className="cerebrium-potential-section">
-            {/* Top Section Header matching Cerebrium Style */}
+            {/* Top Section Header */}
             <div className="cerebrium-top-header">
-                <div className="cerebrium-header-left">
-                    <span className="cerebrium-header-sub">
-                        Potensi Komoditas Ekspor Unggulan Indonesia Menuju Pasar Mancanegara
-                    </span>
-                </div>
-                <div className="cerebrium-header-right">
-                    <h2 className="cerebrium-header-title">
-                        <span className="text-navy">Indonesian Products</span> with{' '}
-                        <span className="text-green">Great Potential</span>
-                    </h2>
-                </div>
+                <h2 className="cerebrium-header-title">
+                    <span className="text-navy">Indonesian Products</span> with{' '}
+                    <span className="text-green">Great Potential</span>
+                </h2>
             </div>
 
             {/* Split Content: Sticky Navigation on Left + Scrolling Showcase Cards on Right */}
