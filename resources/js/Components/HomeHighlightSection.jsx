@@ -109,23 +109,15 @@ export default function HomeHighlightSection() {
 
     return (
         <section className="cerebrium-potential-section">
-            {/* Top Section Header */}
-            <div className="cerebrium-top-header">
-                <h2 className="cerebrium-header-title">
-                    <span className="text-navy">Indonesian Products</span> with{' '}
-                    <span className="text-green">Great Potential</span>
-                </h2>
-            </div>
-
-            {/* Split Content: Sticky Navigation on Left + Scrolling Showcase Cards on Right */}
+            {/* Split Content: Sticky Navigation & Title on Left + Scrolling Showcase Cards on Right */}
             <div className="cerebrium-split-container">
-                {/* Left Column: Sticky List of Commodities */}
+                {/* Left Column: Sticky Title & List of Commodities */}
                 <div className="cerebrium-sticky-col">
                     <div className="cerebrium-sticky-content">
-                        <div className="cerebrium-kicker-row">
-                            <span className="cerebrium-kicker-dot">•</span>
-                            <span className="cerebrium-kicker-text">A FACT</span>
-                        </div>
+                        <h2 className="cerebrium-sticky-title">
+                            <span className="text-navy">Indonesian Products</span> with{' '}
+                            <span className="text-green">Great Potential</span>
+                        </h2>
 
                         <nav className="cerebrium-nav-list" aria-label="Commodity Navigation">
                             {productsData.map((item, idx) => {
