@@ -74,7 +74,7 @@ export default function WhyChooseUsSection() {
                                 >
                                     <path 
                                         d="M6 5.5L12.5 12L6 18.5M12.5 5.5L19 12L12.5 18.5" 
-                                        stroke="#18878B" 
+                                        stroke="#0284c7" 
                                         strokeWidth="3.2" 
                                         strokeLinecap="round" 
                                         strokeLinejoin="round"

@@ -1,6 +1,8 @@
 import { Head } from '@inertiajs/react';
 import Layout from '../Layouts/Layout';
+import HomeHighlightSection from '../Components/HomeHighlightSection';
 import ServicesSection from '../Components/ServicesSection';
+import SelectedActivitiesSection from '../Components/SelectedActivitiesSection';
 import PartnerSliderSection from '../Components/PartnerSliderSection';
 
 function Welcome() {
@@ -17,7 +19,9 @@ function Welcome() {
                     <p className="hero-subtitle-two-tone-left">REPUBLIK INDONESIA</p>
                 </div>
             </div>
+            <HomeHighlightSection />
             <ServicesSection />
+            <SelectedActivitiesSection />
             <PartnerSliderSection />
         </>
     );
