@@ -83,17 +83,6 @@ export default function AboutProcessServices() {
                                     {/* Description (Exact Copywriting Preserved) */}
                                     <p className="about-process-item-desc">{item.desc}</p>
 
-                                    {/* Widescreen Banner Image */}
-                                    {item.image && (
-                                        <div className="about-process-banner-frame">
-                                            <img 
-                                                src={item.image} 
-                                                alt={item.imageAlt || item.title} 
-                                                className="about-process-banner-img" 
-                                            />
-                                        </div>
-                                    )}
-
                                     {/* Divider Line between items */}
                                     {index < serviceItems.length - 1 && (
                                         <div className="about-process-row-divider" />

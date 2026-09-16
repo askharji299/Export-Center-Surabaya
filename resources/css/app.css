@@ -3379,37 +3379,15 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.05rem;
     line-height: 1.8;
     color: #475569;
-    margin: 0 0 2rem 0;
+    margin: 0;
     max-width: 950px;
-}
-
-.about-process-banner-frame {
-    width: 100%;
-    aspect-ratio: 16 / 6.8;
-    max-height: 290px;
-    border-radius: 16px;
-    overflow: hidden;
-    background-color: #f1f5f9;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-.about-process-banner-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.about-process-banner-frame:hover .about-process-banner-img {
-    transform: scale(1.04);
 }
 
 .about-process-row-divider {
     width: 100%;
     height: 1px;
     background-color: #e2e8f0;
-    margin: 3.5rem 0;
+    margin: 2.5rem 0;
 }
 
 @media (max-width: 1024px) {
