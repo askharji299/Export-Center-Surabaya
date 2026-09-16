@@ -72,11 +72,6 @@ export default function AboutProcessServices() {
 
                                     {/* Description (Exact Copywriting Preserved 100%) */}
                                     <p className="about-process-item-desc">{item.desc}</p>
-
-                                    {/* Clean divider line between items */}
-                                    {index < serviceItems.length - 1 && (
-                                        <div className="about-process-row-divider" />
-                                    )}
                                 </div>
                             );
                         })}
