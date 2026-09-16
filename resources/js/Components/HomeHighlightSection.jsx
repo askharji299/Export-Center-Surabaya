@@ -1,16 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-    Leaf, 
-    Fish, 
-    Armchair, 
-    Coffee, 
-    Utensils, 
-    Factory, 
     ArrowRight, 
     Sparkles, 
-    Globe, 
-    ShieldCheck, 
-    Award 
+    Globe 
 } from 'lucide-react';
 import { Link } from '@inertiajs/react';
 
@@ -20,10 +12,9 @@ const productsData = [
         title: 'Spices',
         subtitle: 'Rempah Khas Tropis Nusantara Berkelas Dunia',
         description: 'Indonesia is an archipelagic country rich in natural resources, especially spices which have been known worldwide since centuries ago. Spices from Indonesia have high quality and are widely used in culinary, pharmaceutical, and cosmetic industries.',
-        icon: Leaf,
+        image: '/images/products/spices.jpg',
         badge: 'Rempah Unggulan',
         regions: 'Maluku, Sumatera, Sulawesi',
-        metric: 'Komoditas Ekspor Tertinggi',
         tags: ['Pala & Fuli', 'Cengkeh', 'Kayu Manis', 'Lada Hitam / Putih']
     },
     {
@@ -31,21 +22,19 @@ const productsData = [
         title: 'Fish',
         subtitle: 'Potensi Maritim & Perikanan Tangkap Berkelanjutan',
         description: 'Indonesia is a maritime country rich in marine resources, offering top quality fishery and aquaculture products that meet rigorous international freshness and food safety standards.',
-        icon: Fish,
+        image: '/images/products/fish.jpg',
         badge: 'Hasil Laut & Budidaya',
         regions: 'Laut Jawa, Maluku, Natuna, Arafura',
-        metric: 'Pemasok Terbesar Dunia',
         tags: ['Tuna Segar & Beku', 'Udang Vaname', 'Cumi-cumi', 'Rumput Laut Organik']
     },
     {
         id: 'furniture',
         title: 'Furniture',
         subtitle: 'Keahlian Kayu Premium & Anyaman Rotan Alami',
-        description: 'Indonesia is one of the world\'s leading producers of high-quality handcrafted furniture made from certified sustainable timber, natural rattan, and artisanal craftsmanship.',
-        icon: Armchair,
+        description: "Indonesia is one of the world's leading producers of high-quality handcrafted furniture made from certified sustainable timber, natural rattan, and artisanal craftsmanship.",
+        image: '/images/products/furniture.jpg',
         badge: 'Kriya & Furnitur',
         regions: 'Jepara, Cirebon, Bali, Surabaya',
-        metric: 'Desain Berkelanjutan',
         tags: ['Kayu Jati Solid', 'Rotan Alami', 'Outdoor Furniture', 'Dekorasi Rumah']
     },
     {
@@ -53,10 +42,9 @@ const productsData = [
         title: 'Coffee',
         subtitle: 'Cita Rasa Spesialti Kopi Pegunungan Indonesia',
         description: 'Coffee is one of the plantation commodities that makes Indonesia renowned as one of the largest and most distinctive specialty single-origin coffee exporters in the global market.',
-        icon: Coffee,
+        image: '/images/products/coffee.jpg',
         badge: 'Kopi Spesialti',
         regions: 'Aceh Gayo, Kintamani, Toraja, Jawa Timur',
-        metric: 'Cita Rasa Khas Origin',
         tags: ['Arabika Single Origin', 'Robusta Fine', 'Green Beans', 'Roasted Beans']
     },
     {
@@ -64,10 +52,9 @@ const productsData = [
         title: 'Food Processing',
         subtitle: 'Inovasi Produk Olahan Pangan Bersertifikasi Global',
         description: 'Indonesia has great potential in the food processing industry, delivering diverse halal-certified packaged foods, beverages, and healthy culinary products to international shelves.',
-        icon: Utensils,
+        image: '/images/products/food-processing.jpg',
         badge: 'Pangan Olahan',
         regions: 'Jawa Timur, Jawa Barat, Sumatera Utara',
-        metric: 'Standar Mutu HACCP & Halal',
         tags: ['Makanan Kemasan', 'Bumbu Instan', 'Keripik Buah Alami', 'Minuman Herbal']
     },
     {
@@ -75,10 +62,9 @@ const productsData = [
         title: 'Memproduksi Produk',
         subtitle: 'Daya Saing Manufaktur dan Produksi Bernilai Tambah',
         description: 'Indonesia memiliki potensi besar dalam industri manufaktur, menghasilkan produk berkualitas ekspor yang berdaya saing global dengan dukungan teknologi dan tenaga kerja terampil.',
-        icon: Factory,
+        image: '/images/products/manufacturing.jpg',
         badge: 'Industri Manufaktur',
         regions: 'Surabaya, Sidoarjo, Gresik, Cikarang',
-        metric: 'Efisiensi Skala Industri',
         tags: ['Alas Kaki', 'Tekstil & Apparel', 'Peralatan Rumah Tangga', 'Komponen Rekayasa']
     }
 ];
@@ -169,7 +155,6 @@ export default function HomeHighlightSection() {
                 {/* Right Column: Scrolling Visual Cards */}
                 <div className="cerebrium-cards-col">
                     {productsData.map((item, idx) => {
-                        const IconComponent = item.icon;
                         const isActive = activeIndex === idx;
 
                         return (
@@ -178,36 +163,22 @@ export default function HomeHighlightSection() {
                                 ref={(el) => (cardRefs.current[idx] = el)}
                                 className={`cerebrium-product-card ${isActive ? 'is-focused' : ''}`}
                             >
-                                {/* Visual Card Container (Cerebrium styled visual frame) */}
-                                <div className="cerebrium-visual-frame">
-                                    <div className="cerebrium-visual-header">
-                                        <div className="cerebrium-visual-badge">
+                                {/* High Quality Commodity Photo Frame */}
+                                <div className="cerebrium-photo-frame">
+                                    <img 
+                                        src={item.image} 
+                                        alt={item.title} 
+                                        className="cerebrium-photo-img" 
+                                    />
+                                    <div className="cerebrium-photo-overlay">
+                                        <div className="cerebrium-photo-badge">
                                             <Sparkles size={14} className="badge-sparkle-icon" />
                                             <span>{item.badge}</span>
                                         </div>
-                                        <div className="cerebrium-visual-meta">
+                                        <div className="cerebrium-photo-meta">
                                             <Globe size={14} />
                                             <span>Sentra: {item.regions}</span>
                                         </div>
-                                    </div>
-
-                                    <div className="cerebrium-visual-body">
-                                        <div className="cerebrium-visual-icon-circle">
-                                            <IconComponent size={44} strokeWidth={1.8} />
-                                        </div>
-                                        <div className="cerebrium-visual-highlights">
-                                            <span className="cerebrium-visual-pill-title">Keunggulan Utama:</span>
-                                            <span className="cerebrium-visual-pill-val">{item.metric}</span>
-                                        </div>
-                                    </div>
-
-                                    {/* Commodity Tags */}
-                                    <div className="cerebrium-visual-tags">
-                                        {item.tags.map((tag, tIdx) => (
-                                            <span key={tIdx} className="cerebrium-tag-chip">
-                                                {tag}
-                                            </span>
-                                        ))}
                                     </div>
                                 </div>
 
@@ -216,6 +187,15 @@ export default function HomeHighlightSection() {
                                     <h3 className="cerebrium-card-title">{item.title}</h3>
                                     <p className="cerebrium-card-subtitle">{item.subtitle}</p>
                                     <p className="cerebrium-card-description">{item.description}</p>
+
+                                    {/* Commodity Variety Tags */}
+                                    <div className="cerebrium-tags-row">
+                                        {item.tags.map((tag, tIdx) => (
+                                            <span key={tIdx} className="cerebrium-tag-chip">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
 
                                     <div className="cerebrium-card-action">
                                         <Link href="/services" className="cerebrium-action-btn">
