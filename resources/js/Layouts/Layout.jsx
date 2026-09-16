@@ -1,5 +1,7 @@
 import { Link, usePage } from '@inertiajs/react';
 import { useState } from 'react';
+import Footer from '../Components/Footer';
+import AppLoader from '../Components/AppLoader';
 
 export default function Layout({ children }) {
     const { url } = usePage();
@@ -39,10 +41,11 @@ export default function Layout({ children }) {
 
     return (
         <div className="app-layout">
+            <AppLoader />
             <nav className="navbar">
                 <div className="navbar-inner">
                     <Link href="/" className="navbar-brand">
-                        <img src="/images/logo-kemendag.png" alt="Kementerian Perdagangan Republik Indonesia" className="brand-logo" />
+                        <img src="/images/svg/icon.svg" alt="Kementerian Perdagangan Republik Indonesia" className="brand-logo" />
                     </Link>
 
                     <button className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
@@ -118,6 +121,7 @@ export default function Layout({ children }) {
             <main className="main-content">
                 {children}
             </main>
+            <Footer />
         </div>
     );
 }
