@@ -2187,104 +2187,396 @@ h1, h2, h3, h4, h5, h6 {
         display: none;
     }
 }/* Home Fullscreen Split Section */
-.home-fullscreen-section {
+/* ============================================
+   INDONESIAN PRODUCTS WITH GREAT POTENTIAL 
+   (Cerebrium.ai Sticky Navigation + Showcase Layout)
+   ============================================ */
+.cerebrium-potential-section {
     width: 100%;
-    min-height: 100vh;
     background: #ffffff;
-    box-sizing: border-box;
-    overflow: hidden;
+    padding: clamp(5rem, 8vw, 8.5rem) clamp(1.5rem, 4vw, 5rem);
     position: relative;
-    padding-top: 3.5rem;
+    border-top: 1px solid #f1f5f9;
 }
 
-.home-half-split {
-    display: flex;
-    width: 100%;
-    min-height: calc(100vh - 3.5rem);
-    position: relative;
+/* Top Section Header */
+.cerebrium-top-header {
+    max-width: 1560px;
+    margin: 0 auto clamp(3.5rem, 5vw, 5.5rem) auto;
+    display: grid;
+    grid-template-columns: minmax(280px, 32%) 1fr;
+    gap: clamp(2.5rem, 4vw, 5rem);
+    align-items: flex-end;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid #e2e8f0;
 }
 
-.home-half-image-side {
-    flex: 1;
-    width: 50%;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    background: #ffffff;
-}
-
-.home-half-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: right center;
-    display: block;
-}
-
-.home-half-content-side {
-    flex: 1;
-    width: 50%;
-    min-height: 100vh;
-    background: #ffffff;
-    position: relative;
-    box-sizing: border-box;
+.cerebrium-header-left {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding: 3rem 4rem 4rem 2.5rem;
 }
 
-.home-highlight-description-container {
+.cerebrium-header-sub {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+    line-height: 1.65;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.cerebrium-header-right {
     display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-    margin-top: 14rem;
-    max-width: 90%;
 }
 
-.home-highlight-paragraph {
-    font-size: 0.96rem;
-    line-height: 1.75;
-    color: #475569;
-    text-align: justify;
-    margin: 0;
-}
-
-.home-highlight-global-title-wrapper {
-    position: absolute;
-    top: calc(15% + 1.8rem);
-    left: 27%;
-    right: 1.5rem;
-    z-index: 10;
-    pointer-events: none;
-}
-
-.home-highlight-large-title {
-    font-size: clamp(3rem, 4.7vw, 5.5rem);
+.cerebrium-header-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 3.8vw, 3.8rem);
     font-weight: 800;
-    color: #0b1f3a;
-    line-height: 1.1;
-    letter-spacing: -0.025em;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
     margin: 0;
-    white-space: nowrap;
 }
 
-@media (max-width: 992px) {
-    .home-half-split {
-        flex-direction: column;
+.cerebrium-header-title .text-navy {
+    color: #0d2b55;
+}
+
+.cerebrium-header-title .text-green {
+    color: var(--primary, #1a6b4a);
+}
+
+/* Split Container */
+.cerebrium-split-container {
+    max-width: 1560px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(280px, 32%) 1fr;
+    gap: clamp(3rem, 5vw, 6.5rem);
+    align-items: start;
+    position: relative;
+}
+
+/* Sticky Left Navigation List */
+.cerebrium-sticky-col {
+    position: sticky;
+    top: 130px;
+    align-self: flex-start;
+    padding-right: 1.5rem;
+    z-index: 10;
+}
+
+.cerebrium-sticky-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.cerebrium-kicker-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.cerebrium-kicker-dot {
+    color: var(--primary, #1a6b4a);
+    font-size: 1.35rem;
+    line-height: 1;
+}
+
+.cerebrium-kicker-text {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    color: #0d2b55;
+    text-transform: uppercase;
+}
+
+.cerebrium-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.cerebrium-nav-item {
+    background: none;
+    border: none;
+    padding: 0.25rem 0;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+}
+
+.cerebrium-nav-label {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+    font-weight: 700;
+    color: #cbd5e1;
+    line-height: 1.18;
+    letter-spacing: -0.025em;
+    transition: all 0.35s ease;
+    display: block;
+    user-select: none;
+}
+
+.cerebrium-nav-item:hover .cerebrium-nav-label {
+    color: #94a3b8;
+    transform: translateX(4px);
+}
+
+.cerebrium-nav-item.is-active .cerebrium-nav-label {
+    color: #0d2b55;
+    font-weight: 800;
+    transform: translateX(8px);
+}
+
+/* Right Scrolling Cards */
+.cerebrium-cards-col {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(3.5rem, 6vh, 5.5rem);
+    width: 100%;
+}
+
+.cerebrium-product-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 28px;
+    padding: clamp(2rem, 3.2vw, 3.25rem);
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.04);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.cerebrium-product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+}
+
+.cerebrium-product-card.is-focused,
+.cerebrium-product-card:hover {
+    border-color: rgba(26, 107, 74, 0.35);
+    box-shadow: 0 16px 40px rgba(13, 43, 85, 0.08);
+    transform: translateY(-3px);
+}
+
+.cerebrium-product-card.is-focused::before,
+.cerebrium-product-card:hover::before {
+    background-color: var(--primary, #1a6b4a);
+}
+
+/* Visual Showcase Frame */
+.cerebrium-visual-frame {
+    background: linear-gradient(145deg, #0d2b55 0%, #11385c 65%, #1a6b4a 100%);
+    border-radius: 20px;
+    padding: 2rem 2.25rem;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2), 0 8px 24px rgba(13, 43, 85, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.cerebrium-visual-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cerebrium-visual-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0.85rem;
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(8px);
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.badge-sparkle-icon {
+    color: #fde047;
+}
+
+.cerebrium-visual-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+}
+
+.cerebrium-visual-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cerebrium-visual-icon-circle {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: transform 0.4s ease;
+}
+
+.cerebrium-product-card:hover .cerebrium-visual-icon-circle {
+    transform: scale(1.08) rotate(5deg);
+}
+
+.cerebrium-visual-highlights {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.cerebrium-visual-pill-title {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.72);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.cerebrium-visual-pill-val {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.cerebrium-visual-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-top: 1.15rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.cerebrium-tag-chip {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.78rem;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Card Content */
+.cerebrium-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.cerebrium-card-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 2.2vw, 2.1rem);
+    font-weight: 800;
+    color: #0d2b55;
+    margin: 0 0 0.35rem 0;
+    letter-spacing: -0.02em;
+}
+
+.cerebrium-card-subtitle {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--primary, #1a6b4a);
+    margin: 0 0 1.25rem 0;
+}
+
+.cerebrium-card-description {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #475569;
+    margin: 0 0 2rem 0;
+    max-width: 920px;
+}
+
+.cerebrium-card-action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.cerebrium-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.85rem;
+    background: #0d2b55;
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(13, 43, 85, 0.15);
+}
+
+.cerebrium-action-btn:hover {
+    background: var(--primary, #1a6b4a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(26, 107, 74, 0.25);
+}
+
+@media (max-width: 1024px) {
+    .cerebrium-top-header,
+    .cerebrium-split-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
     }
-    .home-half-image-side,
-    .home-half-content-side {
-        width: 100%;
-        min-height: 50vh;
-    }
-    .home-highlight-global-title-wrapper {
+    .cerebrium-sticky-col {
         position: static;
-        padding: 2rem 1.5rem;
+        top: auto;
+        padding-right: 0;
     }
-    .home-highlight-large-title {
-        white-space: normal;
-        font-size: 2.2rem;
+    .cerebrium-nav-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+    .cerebrium-nav-label {
+        font-size: 1.35rem;
+    }
+    .cerebrium-nav-item.is-active .cerebrium-nav-label {
+        transform: none;
     }
 }
 
