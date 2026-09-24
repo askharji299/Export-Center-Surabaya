@@ -19,4 +19,7 @@ Route::get('/information', fn () => Inertia::render('Information'));
 
 Route::get('/contact', fn () => Inertia::render('Contact'));
 
+Route::get('/design-system', fn () => Inertia::render('DesignSystem'));
+Route::get('/ui-kit', fn () => Inertia::render('DesignSystem'));
+
 Route::get('/login', fn () => Inertia::render('Login'))->name('login');

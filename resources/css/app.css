@@ -5102,7 +5102,8 @@ body {
 }
 
 .news-container {
-    max-width: 1280px;
+    max-width: 1560px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -6390,7 +6391,8 @@ a.footer-sec-val:hover {
 }
 
 .contact-container {
-    max-width: 1280px;
+    max-width: 1560px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
